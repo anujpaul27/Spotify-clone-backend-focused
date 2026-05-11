@@ -11,7 +11,7 @@ app.use(cookieParser())
 
 
 // routes
-app.use('/api/auth/',authRouter) 
+app.use('/api/auth/',authRouter)  
 
 
 module.exports = app

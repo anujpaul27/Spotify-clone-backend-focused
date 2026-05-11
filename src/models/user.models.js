@@ -23,6 +23,6 @@ const userSchema = new mongoose.Schema({
 })
 
 const db = mongoose.connection.useDb('SpotifyDB')
-const userModel = db.model('userInfo',userSchema)
+const userModel = db.model('users',userSchema)
 
 module.exports = userModel
