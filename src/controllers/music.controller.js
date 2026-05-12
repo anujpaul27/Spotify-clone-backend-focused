@@ -59,7 +59,10 @@ async function GetAllMusic (req,res)
 {
   try {
       // 1. get music from the database 
-      const musics = await musicModel.find().populate('artist')
+      const musics = await musicModel
+      .find()
+      .limit(1)
+      .populate('artist')
 
       // 2. success response 
       res.status(200).json({
@@ -72,7 +75,7 @@ async function GetAllMusic (req,res)
       // 3. Error response 
       res.status(500).json({
         message: err.message
-      })
+      }) 
     }
 }
 
