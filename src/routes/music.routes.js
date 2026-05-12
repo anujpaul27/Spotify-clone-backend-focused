@@ -9,7 +9,7 @@ const upload = multer({
 })
 
 router.post('/upload', upload.single('music'), musicController.CreateMusic)
-
+router.post('/album', musicController.CreateAlbum)
 
 
 
