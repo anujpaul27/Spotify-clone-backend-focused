@@ -55,5 +55,25 @@ async function CreateAlbum (req,res) {
 
 }
 
+async function GetAllMusic (req,res)
+{
+  try {
+      // 1. get music from the database 
+      const musics = await musicModel.find().populate('artist')
 
-module.exports = {CreateMusic,CreateAlbum}
+      // 2. success response 
+      res.status(200).json({
+      message: 'Successfully get all music from the database',
+      data: musics
+    })
+  } 
+  catch (err)
+    {
+      // 3. Error response 
+      res.status(500).json({
+        message: err.message
+      })
+    }
+}
+
+module.exports = {CreateMusic,CreateAlbum, GetAllMusic}

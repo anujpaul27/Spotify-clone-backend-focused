@@ -11,12 +11,11 @@ const musicSchema = new mongoose.Schema({
     }, 
     artist: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'users',
+        ref: 'user',
         required: true,
     }
 })
 
-const db = mongoose.connection.useDb('SpotifyDB')
-const musicModel = db.model('music', musicSchema) 
+const musicModel = mongoose.model('music', musicSchema) 
 
 module.exports = musicModel

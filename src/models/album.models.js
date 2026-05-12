@@ -16,7 +16,6 @@ const albumSchema = new mongoose.Schema({
     }
 })
 
-const db = mongoose.connection.useDb('SpotifyDB')
-const albumModel = db.model('album',albumSchema)
+const albumModel = mongoose.model('album',albumSchema)
 
 module.exports = albumModel;
